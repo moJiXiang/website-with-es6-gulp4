@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules
+
+#  OS
+.DS_Store
+
+# Build-related directories
+dist/*
+build/*
+
+# logs
+npm-debug.log
