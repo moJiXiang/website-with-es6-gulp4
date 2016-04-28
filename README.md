@@ -53,3 +53,16 @@ gulp.task('clean', (done)=> {
   "plugins": []
 }
 ```
+
+### How to use
+
+```
+// compile all files in build directory
+gulp compile
+
+// compile all files in dist directory
+gulp compile --production
+
+// develop with browser-sync
+gulp serve
+```
