@@ -17,6 +17,7 @@ import del from 'del';
 
 import config from './config';
 const {srcDir, buildDir, distDir, jsDir, cssDir, sassDir} = config.dir;
+const websiteURL = config.websiteURL;
 const $ = gulploadplugins({
   lazy: true // whether the plugins should be loaded on demand
 })
@@ -53,6 +54,12 @@ gulp.task('styles', ()=> {
     .pipe($.if(argv.production, gulp.dest(distDir + cssDir)))
 })
 
+gulp.task('sitemap', ()=> {
+  return gulp.src([`${srcDir}*.html`])
+    .pipe($.if(argv.production, $.sitemap({siteUrl: websiteURL})))
+    .pipe($.if(argv.production, gulp.dest(distDir)))
+})
+
 gulp.task('html', ()=> {
   return gulp.src([`${srcDir}*.html`])
     .pipe($.if(argv.production, $.htmlmin({collapseWhitespace: true})))
@@ -86,6 +93,7 @@ gulp.task("sdk", ()=> {
 // compile es6 and sass to js and css
 gulp.task('compile', gulp.series(
   gulp.parallel('clean'),
+  gulp.parallel('sitemap'),
   gulp.parallel('scripts', 'html', 'styles')
 ))
 

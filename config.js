@@ -15,7 +15,7 @@ export default {
   css: {
     autoprefixer: ['>98%']
   },
-  prodURL: 'www.test.com',
+  websiteURL: 'www.test.com',
   javascript: {
     entry: ['index.js'],
     babel: { presets: ['es2015'] }
