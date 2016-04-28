@@ -19,5 +19,6 @@ export default {
   javascript: {
     entry: ['index.js'],
     babel: { presets: ['es2015'] }
-  }
+  },
+  globalName: 'test'
 }
