@@ -10,3 +10,6 @@ build/*
 
 # logs
 npm-debug.log
+
+
+.tags*
