@@ -1,5 +1,6 @@
 # Dependency directories
 node_modules
+bower_components
 
 #  OS
 .DS_Store
@@ -12,6 +13,6 @@ build/*
 npm-debug.log
 
 
-.tags*
+.tags
 
 .ideas/*
